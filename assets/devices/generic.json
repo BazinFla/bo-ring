@@ -1,0 +1,51 @@
+{
+  "id": "generic_mouse",
+  "name": "Generic Mouse (5 Buttons)",
+  "author": "BazinFla",
+  "match_ids": [],
+  "match_names": [
+    "Mouse",
+    "Optical Mouse",
+    "USB Mouse",
+    "Generic"
+  ],
+  "image": "mx-master-4.webp",
+  "buttons": [
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.437,
+        0.498
+      ],
+      "badge_y_ratio": 0.34
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.47,
+        0.594
+      ],
+      "badge_y_ratio": 0.52
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.748,
+        0.225
+      ],
+      "badge_y_ratio": 0.21
+    }
+  ]
+}

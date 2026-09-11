@@ -1,0 +1,38 @@
+{
+  "id": "my_custom_mouse",
+  "name": "My Custom Mouse",
+  "author": "Your Name",
+  "match_names": [
+    "Custom Mouse Name In Evdev"
+  ],
+  "match_ids": [
+    "046d:c548"
+  ],
+  "image": "image.png",
+  "buttons": [
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [0.50, 0.28]
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [0.42, 0.52]
+    },
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [0.42, 0.44]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "mx_master_3s",
+  "name": "Logitech MX Master 3S",
+  "author": "BazinFla",
+  "match_ids": [
+    "046d:b023",
+    "046d:b034",
+    "046d:4082"
+  ],
+  "match_names": [
+    "MX Master 3",
+    "Logitech MX Master 3",
+    "Wireless Mouse MX Master 3",
+    "MX Master 3S",
+    "Logitech MX Master 3S",
+    "Wireless Mouse MX Master 3S",
+    "MX Master 3 for Mac"
+  ],
+  "image": "mx-master-3s.webp",
+  "buttons": [
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.153,
+        0.402
+      ],
+      "badge_y_ratio": 0.38
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.197,
+        0.476
+      ],
+      "badge_y_ratio": 0.45
+    },
+    {
+      "code": 278,
+      "cid": "0x00C3",
+      "name_key": "btn_thumb_ring",
+      "default_name": "Thumb Ring",
+      "icon": "⭕",
+      "side": "left",
+      "anchor": [
+        0.049,
+        0.706
+      ],
+      "badge_y_ratio": 0.7
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.406,
+        0.056
+      ],
+      "badge_y_ratio": 0.09
+    },
+    {
+      "code": 280,
+      "cid": "0x00C4",
+      "name_key": "btn_smartshift",
+      "default_name": "SmartShift",
+      "icon": "🔄",
+      "side": "right",
+      "anchor": [
+        0.483,
+        0.162
+      ],
+      "badge_y_ratio": 0.28
+    }
+  ]
+}

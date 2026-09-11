@@ -1,0 +1,8 @@
+{
+  "uuid": "bo-ring-window-tracker@flavien",
+  "name": "Bo-Ring Active Window Tracker",
+  "description": "Exposes active window class, title, and PID on DBus for Bo-Ring",
+  "shell-version": [ "45", "46", "47", "48", "49", "50" ],
+  "version": 2
+}
+

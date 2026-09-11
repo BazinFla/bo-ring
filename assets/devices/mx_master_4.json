@@ -1,0 +1,91 @@
+{
+  "id": "mx_master_4",
+  "name": "Logitech MX Master 4",
+  "author": "BazinFla",
+  "match_ids": [
+    "046d:c548"
+  ],
+  "match_names": [
+    "MX Master 4",
+    "Logitech MX Master 4",
+    "Wireless Mouse MX Master 4",
+    "MX Master"
+  ],
+  "image": "mx-master-4.webp",
+  "buttons": [
+    {
+      "code": 281,
+      "cid": "0x00C3",
+      "name_key": "btn_gestures",
+      "default_name": "Gestures",
+      "icon": "🖐️",
+      "side": "left",
+      "anchor": [
+        0.393,
+        0.377
+      ],
+      "badge_y_ratio": 0.16
+    },
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.433,
+        0.493
+      ],
+      "badge_y_ratio": 0.34
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.481,
+        0.618
+      ],
+      "badge_y_ratio": 0.52
+    },
+    {
+      "code": 278,
+      "name_key": "btn_haptic",
+      "default_name": "Haptic Button",
+      "icon": "⭕",
+      "side": "left",
+      "anchor": [
+        0.298,
+        0.7
+      ],
+      "badge_y_ratio": 0.7
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.739,
+        0.22
+      ],
+      "badge_y_ratio": 0.08
+    },
+    {
+      "code": 280,
+      "cid": "0x00C4",
+      "name_key": "btn_smartshift",
+      "default_name": "SmartShift",
+      "icon": "🔄",
+      "side": "right",
+      "anchor": [
+        0.818,
+        0.433
+      ],
+      "badge_y_ratio": 0.34
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Bo-Ring
+Comment=Bo-Ring GUI Configurator and Action Ring
+Exec=bo-ring
+Icon=input-mouse
+StartupWMClass=bo-ring
+Terminal=false
+Categories=Settings;HardwareSettings;Utility;

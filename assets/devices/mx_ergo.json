@@ -1,0 +1,67 @@
+{
+  "id": "mx_ergo",
+  "name": "Logitech MX Ergo",
+  "author": "BazinFla",
+  "match_ids": [
+    "046d:b01d",
+    "046d:406f"
+  ],
+  "match_names": [
+    "MX Ergo",
+    "Logitech MX Ergo",
+    "Wireless Trackball MX Ergo",
+    "Logitech MX Ergo Wireless Trackball"
+  ],
+  "image": "mx-ergo.webp",
+  "buttons": [
+    {
+      "code": 277,
+      "cid": "0x00ED",
+      "name_key": "btn_precision",
+      "default_name": "Precision Button",
+      "icon": "🎯",
+      "side": "left",
+      "anchor": [
+        0.251,
+        0.57
+      ],
+      "badge_y_ratio": 0.68
+    },
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.269,
+        0.12
+      ],
+      "badge_y_ratio": 0.13
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.277,
+        0.244
+      ],
+      "badge_y_ratio": 0.22
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.533,
+        0.191
+      ],
+      "badge_y_ratio": 0.25
+    }
+  ]
+}

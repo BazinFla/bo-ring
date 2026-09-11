@@ -1,0 +1,64 @@
+[package]
+name = "bo-ring"
+version = "0.2.0"
+edition = "2024"
+authors = ["BazinFla"]
+repository = "https://github.com/BazinFla/bo-ring"
+description = "The Button Overlay Ring & hardware button remapper for Linux/Wayland"
+license = "MIT"
+readme = "README.md"
+keywords = ["bo-ring", "action-ring", "radial-menu", "wayland", "mouse-remapper"]
+categories = ["command-line-utilities", "gui", "hardware-support"]
+
+[[bin]]
+name = "bo-ring"
+path = "src/main.rs"
+
+
+
+[dependencies]
+evdev = "0.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+eframe = "0.28"
+egui = "0.28"
+image = { version = "0.25", features = ["webp", "png"] }
+rfd = "0.14"
+libc = "0.2"
+
+[package.metadata.deb]
+name = "bo-ring"
+maintainer = "BazinFla"
+copyright = "2026 BazinFla"
+license-file = ["LICENSE", "4"]
+depends = "$auto"
+section = "utils"
+priority = "optional"
+extended-description = "The Button Overlay Ring & hardware button remapper for Linux/Wayland"
+maintainer-scripts = "packaging"
+assets = [
+    ["target/release/bo-ring", "usr/bin/bo-ring", "755"],
+    ["packaging/bo-ring.desktop", "usr/share/applications/bo-ring.desktop", "644"],
+    ["packaging/99-bo-ring-uinput.rules", "usr/lib/udev/rules.d/99-bo-ring-uinput.rules", "644"],
+    ["packaging/bo-ring.service", "usr/lib/systemd/user/bo-ring.service", "644"],
+    ["assets/img/*", "usr/share/bo-ring/assets/img/", "644"],
+    ["assets/apps/*", "usr/share/bo-ring/assets/apps/", "644"],
+    ["assets/gnome_extension/*", "usr/share/bo-ring/assets/gnome_extension/", "644"],
+    ["assets/devices/*", "usr/share/bo-ring/devices/", "644"],
+    ["assets/devices/images/*", "usr/share/bo-ring/devices/images/", "644"],
+    ["locales/*.json", "usr/share/bo-ring/locales/", "644"],
+]
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/bo-ring", dest = "/usr/bin/bo-ring", mode = "755" },
+    { source = "packaging/bo-ring.desktop", dest = "/usr/share/applications/bo-ring.desktop", mode = "644" },
+    { source = "packaging/99-bo-ring-uinput.rules", dest = "/usr/lib/udev/rules.d/99-bo-ring-uinput.rules", mode = "644" },
+    { source = "packaging/bo-ring.service", dest = "/usr/lib/systemd/user/bo-ring.service", mode = "644" },
+    { source = "assets/**/*", dest = "/usr/share/bo-ring/assets", mode = "644" },
+    { source = "locales/**/*", dest = "/usr/share/bo-ring/locales", mode = "644" },
+]
+post_install_script = "packaging/post_install.sh"
+post_uninstall_script = "packaging/post_uninstall.sh"
+

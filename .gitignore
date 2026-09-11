@@ -1,0 +1,34 @@
+# Build artifacts
+/target
+
+# Rust backup files
+**/*.rs.bk
+
+# Logs
+*.log
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Config backups
+config.toml.bak
+
+# Release distribution archives
+/dist
+
+# Root loose screenshots
+/*.png
+

@@ -1,0 +1,68 @@
+{
+  "id": "m720_triathlon",
+  "name": "Logitech M720 Triathlon",
+  "author": "BazinFla",
+  "match_ids": [
+    "046d:b015",
+    "046d:405e"
+  ],
+  "match_names": [
+    "M720",
+    "Logitech M720",
+    "M720 Triathlon",
+    "Logitech M720 Triathlon",
+    "Wireless Mouse M720"
+  ],
+  "image": "m720_triathlon.webp",
+  "buttons": [
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.174,
+        0.397
+      ],
+      "badge_y_ratio": 0.34
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.24,
+        0.539
+      ],
+      "badge_y_ratio": 0.52
+    },
+    {
+      "code": 278,
+      "cid": "0x00D0",
+      "name_key": "btn_thumb_ring",
+      "default_name": "Thumb Ring",
+      "icon": "⭕",
+      "side": "left",
+      "anchor": [
+        0.328,
+        0.676
+      ],
+      "badge_y_ratio": 0.7
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.577,
+        0.143
+      ],
+      "badge_y_ratio": 0.25
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "mx_vertical",
+  "name": "Logitech MX Vertical",
+  "author": "BazinFla",
+  "match_ids": [
+    "046d:b020",
+    "046d:407b",
+    "046d:c08a",
+    "046d:b036"
+  ],
+  "match_names": [
+    "MX Vertical",
+    "Logitech MX Vertical",
+    "Lift",
+    "Logitech Lift",
+    "Wireless Mouse MX Vertical",
+    "Lift Vertical Ergonomic Mouse"
+  ],
+  "image": "mx-vertical.webp",
+  "buttons": [
+    {
+      "code": 276,
+      "name_key": "btn_next",
+      "default_name": "Next",
+      "icon": "▶️",
+      "side": "left",
+      "anchor": [
+        0.344,
+        0.326
+      ],
+      "badge_y_ratio": 0.34
+    },
+    {
+      "code": 275,
+      "name_key": "btn_back",
+      "default_name": "Back",
+      "icon": "◀️",
+      "side": "left",
+      "anchor": [
+        0.344,
+        0.422
+      ],
+      "badge_y_ratio": 0.52
+    },
+    {
+      "code": 274,
+      "name_key": "btn_middle_wheel",
+      "default_name": "Middle Click",
+      "icon": "🖱️",
+      "side": "right",
+      "anchor": [
+        0.746,
+        0.191
+      ],
+      "badge_y_ratio": 0.25
+    },
+    {
+      "code": 280,
+      "cid": "0x00FD",
+      "name_key": "btn_dpi",
+      "default_name": "DPI Switch",
+      "icon": "⚡",
+      "side": "right",
+      "anchor": [
+        0.435,
+        0.524
+      ],
+      "badge_y_ratio": 0.5
+    }
+  ]
+}

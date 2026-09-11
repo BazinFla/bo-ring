@@ -1,0 +1,81 @@
+name: Release Automation
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build, Package & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libudev-dev rpm
+
+      - name: Install Packaging Tools (cargo-deb & cargo-generate-rpm)
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-deb,cargo-generate-rpm
+
+      - name: Build Release Binary
+        run: cargo build --release
+
+      - name: Build Debian Package (.deb)
+        run: cargo deb --no-build
+
+      - name: Build RedHat Package (.rpm)
+        run: cargo generate-rpm
+
+      - name: Create Standalone Archive (.tar.gz)
+        run: |
+          mkdir -p dist/bo-ring
+          cp target/release/bo-ring install.sh uninstall.sh README.md LICENSE dist/bo-ring/
+          cp -r assets locales packaging dist/bo-ring/
+          cd dist && tar -czvf bo-ring-linux-x86_64.tar.gz bo-ring/
+
+      - name: Extract Release Notes from CHANGELOG
+        run: |
+          python3 -c '
+          import re, os
+          tag = os.environ.get("GITHUB_REF_NAME", "").strip()
+          clean_ver = tag.lstrip("v")
+          with open("CHANGELOG.md", "r", encoding="utf-8") as f:
+              text = f.read()
+
+          pattern = rf"## \[(?:{re.escape(clean_ver)}|{re.escape(tag)})\][^\n]*\n(.*?)(?=\n## \[|\Z)"
+          m = re.search(pattern, text, re.DOTALL)
+          if not m:
+              m = re.search(r"## \[Unreleased\][^\n]*\n(.*?)(?=\n## \[|\Z)", text, re.DOTALL)
+
+          notes = m.group(1).strip() if m else f"Release {tag}"
+          notes = re.sub(r"\n---\s*$", "", notes).strip()
+
+          with open("RELEASE_NOTES.md", "w", encoding="utf-8") as out:
+              out.write(notes + "\n")
+          '
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Bo-Ring ${{ github.ref_name }}"
+          body_path: RELEASE_NOTES.md
+          files: |
+            dist/bo-ring-linux-x86_64.tar.gz
+            target/debian/*.deb
+            target/generate-rpm/*.rpm
+            target/release/bo-ring
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
